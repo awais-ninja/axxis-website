@@ -14,7 +14,7 @@ describe("root layout", () => {
     expect(metadata.icons.apple[0].url).toBe("/axxis-icon-180.png");
   });
 
-  test("renders an English document around the page", () => {
+  test("renders an English document around the shared shell", () => {
     render(
       <RootLayout>
         <p>Page body</p>
@@ -23,5 +23,11 @@ describe("root layout", () => {
 
     expect(document.documentElement).toHaveAttribute("lang", "en");
     expect(screen.getByText("Page body")).toBeInTheDocument();
+    expect(screen.getByRole("main")).toHaveAttribute("id", "main");
+    expect(
+      screen.getByRole("link", { name: "Skip to content" }),
+    ).toHaveAttribute("href", "#main");
+    expect(screen.getByRole("banner")).toBeInTheDocument();
+    expect(screen.getByRole("contentinfo")).toBeInTheDocument();
   });
 });
