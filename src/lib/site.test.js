@@ -10,6 +10,10 @@ describe("site content", () => {
   test("names the company without a service claim", () => {
     expect(site.name).toBe("AXXIS Works Ltd");
     expect(site.description).toBe("Corporate website for AXXIS Works Ltd.");
+    expect(site.summary).toBe(
+      "AXXIS Works Ltd is a UK-based technology, software, IT and full-service marketing solutions company.",
+    );
+    expect(site.summary).not.toMatch(/@|\d{3,}|registered office/i);
   });
 
   test("references sized delivery assets rather than 4K masters or the damaged square", () => {

@@ -1,3 +1,6 @@
+import { SiteFooter } from "@/components/site-footer";
+import { SiteHeader } from "@/components/site-header";
+import { SkipLink } from "@/components/skip-link";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -18,7 +21,18 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <SkipLink />
+        <SiteHeader />
+        <main
+          id="main"
+          tabIndex={-1}
+          className="mx-auto w-full max-w-5xl flex-1 px-4 py-12 outline-none sm:py-16"
+        >
+          {children}
+        </main>
+        <SiteFooter />
+      </body>
     </html>
   );
 }

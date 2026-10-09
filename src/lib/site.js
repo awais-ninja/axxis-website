@@ -1,6 +1,8 @@
 export const site = {
   name: "AXXIS Works Ltd",
   description: "Corporate website for AXXIS Works Ltd.",
+  summary:
+    "AXXIS Works Ltd is a UK-based technology, software, IT and full-service marketing solutions company.",
   logo: {
     src: "/axxis-icon-256.png",
     width: 256,
