@@ -1,10 +1,15 @@
-import { site } from "@/lib/site";
+import { CapabilityStory } from "@/components/capability-story";
+import { EnquiryPrompt } from "@/components/enquiry-prompt";
+import { HomeHero } from "@/components/home-hero";
+import { ServiceBento } from "@/components/service-bento";
 
 export default function HomePage() {
   return (
     <>
-      <h1 className="text-navy">{site.name}</h1>
-      <p className="mt-4 max-w-2xl text-lg text-grey">{site.description}</p>
+      <HomeHero />
+      <ServiceBento />
+      <CapabilityStory />
+      <EnquiryPrompt />
     </>
   );
 }

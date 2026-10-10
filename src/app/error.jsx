@@ -6,7 +6,7 @@ export default function RootError({ error, reset }) {
   void error;
 
   return (
-    <>
+    <div className="mx-auto w-full max-w-5xl px-4 py-12 sm:py-16">
       <h1 className="text-navy">Something went wrong</h1>
       <p className="mt-4 max-w-2xl text-lg text-grey">
         The page could not be displayed.
@@ -26,6 +26,6 @@ export default function RootError({ error, reset }) {
           Home
         </Link>
       </p>
-    </>
+    </div>
   );
 }

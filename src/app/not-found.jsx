@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function NotFound() {
   return (
-    <>
+    <div className="mx-auto w-full max-w-5xl px-4 py-12 sm:py-16">
       <h1 className="text-navy">Page not found</h1>
       <p className="mt-4 max-w-2xl text-lg text-grey">
         That address is not part of this website.
@@ -20,6 +20,6 @@ export default function NotFound() {
           Home
         </Link>
       </p>
-    </>
+    </div>
   );
 }

@@ -10,6 +10,10 @@ describe("site content", () => {
   test("names the company without a service claim", () => {
     expect(site.name).toBe("AXXIS Works Ltd");
     expect(site.description).toBe("Corporate website for AXXIS Works Ltd.");
+    expect(site.headline).toBe("Technology That Powers Business Growth.");
+    expect(site.supporting).toBe(
+      "From professional websites and custom software to IT support, automation and comprehensive marketing, AXXIS Works delivers integrated solutions for modern businesses.",
+    );
     expect(site.summary).toBe(
       "AXXIS Works Ltd is a UK-based technology, software, IT and full-service marketing solutions company.",
     );

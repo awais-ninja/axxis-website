@@ -37,7 +37,7 @@ The shell already uses a 64rem (`max-w-5xl`) column, 16px side padding, and vert
 
 Breakpoints follow Tailwind’s existing `sm` and `lg` steps. No separate tablet stylesheet.
 
-The homepage is a full-bleed navy composition. Until D13 is signed, the hero uses the confirmed positioning sentence. After sign-off it uses “Technology That Powers Business Growth.” and the approved supporting sentence. The 4K hero files stay archives. They are soft JPEG derivatives and are not the hero artwork.
+The homepage is a full-bleed navy composition. The hero uses “Technology That Powers Business Growth.” and the approved supporting sentence, “From professional websites and custom software to IT support, automation and comprehensive marketing, AXXIS Works delivers integrated solutions for modern businesses.” The 4K hero files stay archives. They are soft JPEG derivatives and are not the hero artwork.
 
 ## Three references, one system
 

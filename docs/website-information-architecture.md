@@ -1,6 +1,6 @@
 # Website information architecture
 
-Structure for the AXXIS Works Ltd site after the owner confirmed the service portfolio. The homepage headline remains proposed (D13). Pages marked **Hold** stay out of the build until the named decision is resolved. This document does not add routes.
+Structure for the AXXIS Works Ltd site after the owner confirmed the service portfolio. The homepage headline is the approved D13 copy. Pages marked **Hold** stay out of the build until the named decision is resolved. This document does not add routes.
 
 Service URLs are an allow-list. Implementation must not accept an arbitrary slug.
 
@@ -72,15 +72,15 @@ No link points at a 4K asset or at the missing social square.
 
 ### Home `/`
 
-|               |                                                                                                                                                                                                     |
-| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Purpose       | State the confirmed positioning and route people to the seven services or to Contact.                                                                                                               |
-| Audience      | A first-time visitor deciding whether to enquire.                                                                                                                                                   |
-| Primary CTA   | Contact the company.                                                                                                                                                                                |
-| Secondary CTA | View services.                                                                                                                                                                                      |
-| Sections      | Header; proposed headline and supporting sentence once D13 is signed, otherwise the confirmed positioning sentence; seven service links; a short factual about strip; final enquiry prompt; footer. |
-| SEO intent    | Brand search for AXXIS Works Ltd, and the confirmed descriptor as a UK technology, software, IT and marketing company.                                                                              |
-| Hold          | The proposed headline until D13. Registration and contact facts until D2.                                                                                                                           |
+|               |                                                                                                                                                                                      |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Purpose       | State the approved headline and route people to the seven services or to Contact.                                                                                                    |
+| Audience      | A first-time visitor deciding whether to enquire.                                                                                                                                    |
+| Primary CTA   | Contact the company.                                                                                                                                                                 |
+| Secondary CTA | View services.                                                                                                                                                                       |
+| Sections      | Header; the approved headline “Technology That Powers Business Growth.” and its supporting sentence; seven service links; a short factual about strip; final enquiry prompt; footer. |
+| SEO intent    | Brand search for AXXIS Works Ltd, and the confirmed descriptor as a UK technology, software, IT and marketing company.                                                               |
+| Hold          | Registration and contact facts until D2.                                                                                                                                             |
 
 ### About `/about`
 

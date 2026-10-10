@@ -9,11 +9,11 @@ Planning record for Step 1.4. This document does not authorise public claims, an
 | Assumption     | Working hypothesis, not a fact about the company                   |
 | Owner decision | Must be supplied or approved before it is treated as a requirement |
 
-The service portfolio below is owner-confirmed. The homepage headline and supporting sentence are proposed copy and still need final sign-off (D13).
+The service portfolio below is owner-confirmed. The homepage headline and supporting sentence are owner-approved (D13).
 
 ## Confirmed foundation
 
-The site is the corporate website for **AXXIS Works Ltd**. The running application is a Next.js 16.4 App Router shell in JavaScript and JSX. The only public sentence is “Corporate website for AXXIS Works Ltd.”
+The site is the corporate website for **AXXIS Works Ltd**. The running application is a Next.js 16.4 App Router shell in JavaScript and JSX. The document description remains “Corporate website for AXXIS Works Ltd.” The homepage uses the approved D13 headline and supporting sentence.
 
 Confirmed constraints:
 
@@ -63,7 +63,7 @@ Digital Marketing & Advertising includes these capabilities:
 
 That last line covers channels of the same kind as the list. It does not authorise an unnamed discipline, a platform specialism, or a result claim. A capability that is not on this list stays off the page until the owner confirms it.
 
-**Proposed copy, awaiting D13:**
+**Approved homepage copy (D13):**
 
 - Headline: Technology That Powers Business Growth.
 - Supporting sentence: From professional websites and custom software to IT support, automation and comprehensive marketing, AXXIS Works delivers integrated solutions for modern businesses.
@@ -80,23 +80,23 @@ No audience research has been done. Treat segment names as a hypothesis.
 
 These are proposed requirements for a first public version. They become build requirements only after the owner accepts this plan and supplies the facts each item needs.
 
-| ID  | Requirement                                                                                                                                    | Depends on                                                       |
-| --- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
-| R1  | Home, About, Services overview, and Contact. Service names use the confirmed portfolio. Homepage headline waits on D13                         | D13 for the headline. D2 only for registration and contact facts |
-| R2  | One landing page for each of the seven confirmed categories, at its allow-listed slug, with distinct copy                                      | Resolved portfolio                                               |
-| R3  | Enquiry path from every primary page and every service page to Contact                                                                         | None                                                             |
-| R4  | Contact form with accessible validation, server-side checks, and abuse controls                                                                | D4, D5                                                           |
-| R5  | A way for the company to receive the enquiry                                                                                                   | D4                                                               |
-| R6  | Privacy notice that matches the data actually collected                                                                                        | D2, D4, D5                                                       |
-| R7  | Accessibility statement aligned with the WCAG 2.2 AA target                                                                                    | Enquiry path, or a published email from D2                       |
-| R8  | Cookie information only if a non-essential cookie or similar technology is used                                                                | D6                                                               |
-| R9  | Website terms if the owner wants terms published, after review                                                                                 | D9                                                               |
-| R10 | Unique titles and descriptions, `sitemap.xml`, and `robots.txt` on the real origin                                                             | D8                                                               |
-| R11 | Organisation structured data limited to confirmed name, URL, and logo                                                                          | D2, D8                                                           |
-| R12 | Branded not-found page                                                                                                                         | None beyond the shell                                            |
-| R13 | Core Web Vitals targets recorded below, checked before a public launch                                                                         | D8                                                               |
-| R14 | Content edited in the repository and released through the existing CI gate                                                                     | None                                                             |
-| R15 | Premium interface: editorial navy hero, lit service cards, Motion, and the reviewed React Bits shortlist. Content stays visible without motion | D15                                                              |
+| ID  | Requirement                                                                                                                                    | Depends on                                 |
+| --- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------ |
+| R1  | Home, About, Services overview, and Contact. Service names use the confirmed portfolio. The homepage uses the approved D13 headline            | D2 only for registration and contact facts |
+| R2  | One landing page for each of the seven confirmed categories, at its allow-listed slug, with distinct copy                                      | Resolved portfolio                         |
+| R3  | Enquiry path from every primary page and every service page to Contact                                                                         | None                                       |
+| R4  | Contact form with accessible validation, server-side checks, and abuse controls                                                                | D4, D5                                     |
+| R5  | A way for the company to receive the enquiry                                                                                                   | D4                                         |
+| R6  | Privacy notice that matches the data actually collected                                                                                        | D2, D4, D5                                 |
+| R7  | Accessibility statement aligned with the WCAG 2.2 AA target                                                                                    | Enquiry path, or a published email from D2 |
+| R8  | Cookie information only if a non-essential cookie or similar technology is used                                                                | D6                                         |
+| R9  | Website terms if the owner wants terms published, after review                                                                                 | D9                                         |
+| R10 | Unique titles and descriptions, `sitemap.xml`, and `robots.txt` on the real origin                                                             | D8                                         |
+| R11 | Organisation structured data limited to confirmed name, URL, and logo                                                                          | D2, D8                                     |
+| R12 | Branded not-found page                                                                                                                         | None beyond the shell                      |
+| R13 | Core Web Vitals targets recorded below, checked before a public launch                                                                         | D8                                         |
+| R14 | Content edited in the repository and released through the existing CI gate                                                                     | None                                       |
+| R15 | Premium interface: editorial navy hero, lit service cards, Motion, and the reviewed React Bits shortlist. Content stays visible without motion | D15                                        |
 
 Our Work is a launch page only when at least one project is verified (D3). Insights and a standalone FAQ are not launch requirements.
 
@@ -104,7 +104,7 @@ Our Work is a launch page only when at least one project is verified (D3). Insig
 
 ### Content
 
-- Each page has one clear purpose, one primary call to action, and copy the owner has approved. Service names and scope lines may use the confirmed portfolio before D13 is signed.
+- Each page has one clear purpose, one primary call to action, and copy the owner has approved. Service names and scope lines use the confirmed portfolio. The homepage headline is the approved D13 line.
 - Each of the seven service pages describes that category’s confirmed scope, who it is for, and how to enquire. The marketing page lists only the confirmed capabilities. Pages do not quote fees or results.
 - About may use the confirmed UK-based positioning. Registration, address, email, and phone appear only when the owner supplies them (D2).
 - Empty sections are omitted. A heading with placeholder text is not acceptable.
