@@ -29,8 +29,19 @@ describe("site footer", () => {
       "href",
       "/contact",
     );
+    expect(screen.getByRole("link", { name: "Privacy" })).toHaveAttribute(
+      "href",
+      "/privacy",
+    );
+    expect(screen.getByRole("link", { name: "Accessibility" })).toHaveAttribute(
+      "href",
+      "/accessibility",
+    );
     expect(
-      screen.queryByRole("link", { name: "Privacy" }),
+      screen.queryByRole("link", { name: "Cookies" }),
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByRole("link", { name: "Terms" }),
     ).not.toBeInTheDocument();
     expect(footer).not.toHaveTextContent(/@|registered office|\+44/i);
   });

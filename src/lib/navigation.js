@@ -5,7 +5,19 @@ const navigationCandidates = [
   { href: "/contact", label: "Contact" },
 ];
 
-const implementedPaths = new Set(["/", "/about", "/services", "/contact"]);
+const legalCandidates = [
+  { href: "/privacy", label: "Privacy" },
+  { href: "/accessibility", label: "Accessibility" },
+];
+
+const implementedPaths = new Set([
+  "/",
+  "/about",
+  "/services",
+  "/contact",
+  "/privacy",
+  "/accessibility",
+]);
 
 export const enquiryHref = "/contact";
 
@@ -17,3 +29,5 @@ export function navigationForImplementedRoutes(
 }
 
 export const primaryNavigation = navigationForImplementedRoutes();
+
+export const legalNavigation = navigationForImplementedRoutes(legalCandidates);

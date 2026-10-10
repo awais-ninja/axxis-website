@@ -28,7 +28,7 @@ Service URLs are an allow-list. Implementation must not accept an arbitrary slug
 /faq                                                   Not justified yet
 ```
 
-The current app has Home, About, the services overview, the seven service pages, and Contact, plus the framework not-found route. Contact shows the enquiry fields and does not send them. Delivery remains an open decision.
+The current app has Home, About, the services overview, the seven service pages, Contact, a provisional Privacy notice, and an Accessibility statement, plus the framework not-found route. Contact shows the enquiry fields and does not send them. Delivery remains an open decision. `/cookies` and `/terms` are not routes.
 
 Primary navigation, once those pages exist:
 
@@ -135,35 +135,36 @@ A later project page would contain the verified summary, the work delivered, and
 
 ### Contact `/contact`
 
-|             |                                                                                                                                    |
-| ----------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| Purpose     | Show how an enquiry will be made, without collecting it yet.                                                                       |
-| Audience    | A person ready to write to the company.                                                                                            |
-| Primary CTA | None while delivery is closed. The submit control is disabled.                                                                     |
-| Sections    | Short intro; disabled field preview; note that no email, phone, or address is published. No privacy link until that notice exists. |
-| SEO intent  | Navigational. The page can be indexed. Form responses are not a separate URL.                                                      |
+|             |                                                                                                                                              |
+| ----------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| Purpose     | Show how an enquiry will be made, without collecting it yet.                                                                                 |
+| Audience    | A person ready to write to the company.                                                                                                      |
+| Primary CTA | None while delivery is closed. The submit control is disabled.                                                                               |
+| Sections    | Short intro; disabled field preview; note that no email, phone, or address is published. The footer links to the provisional privacy notice. |
+| SEO intent  | Navigational. The page can be indexed. Form responses are not a separate URL.                                                                |
 
 ### Privacy `/privacy`
 
-Required before a form stores or sends personal data. The page names the controller, what is collected, why, who receives it, how long it is kept, and how to exercise rights. Wording waits on D2, D4, and D5. This plan is not legal advice.
+A provisional notice is published. It describes the disabled enquiry form, the absence of analytics and application cookies found in the Step 1.9 review, and the possibility that a future host may process technical connection records. It does not name a controller contact, host, processor, retention period, lawful basis, or transfer. It says it is not a complete privacy notice. Legal approval stays open until D2, D4, D5, and D8 supply the missing facts. This plan is not legal advice.
 
 ### Cookie notice `/cookies`
 
-Publish this page when D6 adds a non-essential cookie, local storage used for tracking, or a similar technology. A launch with no analytics and no third-party tags does not need a cookie banner or this URL. Strictly necessary technical storage, if any is added later, is described in the privacy notice.
+Not published. The Step 1.9 review of the application found no non-essential cookie, analytics script, marketing tag, embedded third-party media, or browser-storage write. A cookie banner was not added. Publish this page when D6 adds a non-essential cookie, local storage used for tracking, or a similar technology. The review does not prove that an unchosen host can never set a cookie. Strictly necessary technical storage, if any is added later, is described in the privacy notice.
 
 ### Terms `/terms`
 
-Publish only if the owner decides the site should carry website terms (D9). The page would cover use of the site. It would not invent service levels, prices, or liability positions. The owner reviews the text before it is public.
+Not created in Step 1.9. Publish only if the owner decides the site should carry website terms (D9). The page would cover use of the site. It would not invent service levels, prices, or liability positions. The owner reviews the text before it is public.
 
 ### Accessibility `/accessibility`
 
-|             |                                                                                                                     |
-| ----------- | ------------------------------------------------------------------------------------------------------------------- |
-| Purpose     | State the WCAG 2.2 AA target, how to report a barrier, and any known gap.                                           |
-| Audience    | A visitor who needs an alternative way to get in touch.                                                             |
-| Primary CTA | Contact, by the same enquiry path or a published email.                                                             |
-| Sections    | Target standard; contact method; known limitations, including brand-asset limits that affect contrast or sharpness. |
-| SEO intent  | Trust and compliance support. Low search priority.                                                                  |
+|             |                                                                                                                                                                |
+| ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Purpose     | State the WCAG 2.2 AA design target, the behaviour that is implemented, and the known gaps.                                                                    |
+| Audience    | A visitor who needs to know how the site is built and what has not been checked.                                                                               |
+| Primary CTA | None while enquiries are closed. The page links to Contact and says the form does not send.                                                                    |
+| Sections    | Design target without a compliance claim; keyboard, landmarks, reduced motion, and no-JavaScript wording; known limitations; a later feedback and review path. |
+| Hold        | A published accessibility address until D2 or D4 supplies one. No independent assessment is claimed.                                                           |
+| SEO intent  | Trust and compliance support. Low search priority.                                                                                                             |
 
 ### Insights and FAQ
 

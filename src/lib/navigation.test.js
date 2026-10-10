@@ -1,4 +1,5 @@
 import {
+  legalNavigation,
   navigationForImplementedRoutes,
   primaryNavigation,
 } from "./navigation";
@@ -11,6 +12,13 @@ describe("primary navigation", () => {
       { href: "/services", label: "Services" },
       { href: "/contact", label: "Contact" },
     ]);
+    expect(legalNavigation).toEqual([
+      { href: "/privacy", label: "Privacy" },
+      { href: "/accessibility", label: "Accessibility" },
+    ]);
+    expect(primaryNavigation.map((item) => item.href)).not.toContain(
+      "/privacy",
+    );
   });
 
   test("drops every candidate when no route has been built", () => {

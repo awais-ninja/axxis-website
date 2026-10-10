@@ -26,7 +26,7 @@ Do this only in an approved phase, and only together:
 
 1. Confirm the recipient address and whether delivery is `mailto` or a named server-side provider (D4). Do not invent an address in the page.
 2. Confirm retention and the lawful basis (D5).
-3. Publish the privacy notice (Step 1.9) so it matches the real flow. Do not link a notice that does not exist.
+3. Revise the privacy notice so it matches that flow, then have it approved. The provisional `/privacy` page describes the disabled form only. It does not satisfy this step.
 4. If the limiter needs a shared store, confirm the production host first (D8).
 5. Add one same-origin handler. Validate the checks in the table below. Reject unexpected fields. A filled honeypot and a rate-limit hit return the same generic failure. Do not log the message body.
 6. Keep provider secrets in server-only environment variables.
@@ -76,6 +76,38 @@ The site needs a path from the handler to the company. Options, with no vendor s
 
 Proposed message content: the visitor’s name, email, optional phone, service slug, and message, plus the time of submission. No extra tracking identifiers.
 
+## What Step 1.9 checked
+
+This is an application review, not a legal opinion and not a statement about an unchosen host.
+
+| Check                            | Evidence in this repository                                                                                                                                          | Result                                                                                                        |
+| -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| Enquiry delivery                 | `src/lib/enquiry-delivery.js` sets `enabled` to `false`. `/contact` disables the fields. There is no Route Handler and no `"use server"`.                            | The form cannot send, store, or email a submission.                                                           |
+| Browser storage                  | No `localStorage` or `sessionStorage` write in `src`. The contact test submits the preview and expects empty storage.                                                | The application does not persist an enquiry in the browser.                                                   |
+| Cookies in application code      | No `document.cookie` write and no `cookies()` call in `src`.                                                                                                         | The application code does not set a cookie.                                                                   |
+| Analytics and tags               | No analytics package in `package.json`. No third-party script tag in `src`.                                                                                          | No analytics or marketing tag is installed.                                                                   |
+| Embedded media and remote assets | CSP `img-src`, `font-src`, `frame-src`, and production `connect-src` stay on `'self'`, with `frame-src 'none'`. Fonts are the system stack in `src/app/globals.css`. | No embedded third-party media and no remote font.                                                             |
+| Hosting logs                     | D8 is unset. No deployment workflow names a host.                                                                                                                    | A future host may process connection details. The notice must not deny that, and it must not invent the host. |
+
+Playwright on the production server checks that `/privacy` and `/accessibility` return no `Set-Cookie` header, make no third-party request, and leave `localStorage`, `sessionStorage`, and `document.cookie` empty. That check is about this app’s responses. It does not prove a later host will never set a cookie.
+
+Because no non-essential cookie or tracker was found, Step 1.9 does not add a cookie banner or a `/cookies` page. `/terms` is also absent, because D9 still says to omit terms until the owner asks and reviews the text.
+
+Draft placeholders for facts that must not be invented on the public pages:
+
+| Fact                                   | Placeholder                      |
+| -------------------------------------- | -------------------------------- |
+| Controller contact                     | `[unconfirmed — do not publish]` |
+| Company number, registered office, VAT | `[unconfirmed — do not publish]` |
+| Hosting provider and processors        | `[unconfirmed — do not publish]` |
+| Lawful basis                           | `[unconfirmed — do not publish]` |
+| Enquiry retention                      | `[unconfirmed — do not publish]` |
+| Technical-log retention                | `[unconfirmed — do not publish]` |
+| International transfers                | `[unconfirmed — do not publish]` |
+| Accessibility feedback address         | `[unconfirmed — do not publish]` |
+
+The public `/privacy` page says it is provisional and not complete. Production launch still needs the owner or their adviser to approve a notice that fills the confirmed facts. The public `/accessibility` page names WCAG 2.2 AA as the design target, lists the implemented keyboard, landmark, reduced-motion, and no-JavaScript behaviour, and records that no independent assessment has been done.
+
 ## Privacy and UK GDPR
 
 If the form collects personal data, AXXIS Works Ltd is the controller for those enquiries unless the owner says otherwise. The owner confirms the lawful basis with their adviser before launch (D5). A likely basis to discuss is steps taken at the person’s request before a contract, for the enquiry itself. That sentence is a prompt for the owner, not a concluded legal assessment.
@@ -96,7 +128,7 @@ Server logs that contain IP addresses are personal data. Keep them for security 
 
 ## Cookies and consent
 
-A launch without analytics, advertising, or embedded third-party media can ship with no cookie banner and no `/cookies` page. Document that choice in the privacy notice if any strictly necessary technical storage is introduced later.
+A launch without analytics, advertising, or embedded third-party media can ship with no cookie banner and no `/cookies` page. Step 1.9 confirmed that this application is in that state and did not add either control. Document strictly necessary technical storage in the privacy notice if any is introduced later. Do not treat this as proof that an unchosen host will never set a cookie.
 
 Before any non-essential cookie or similar tracker:
 
