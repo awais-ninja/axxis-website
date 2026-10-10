@@ -1,3 +1,4 @@
+import { EnquiryLink } from "@/components/enquiry-link";
 import { site } from "@/lib/site";
 
 export function EnquiryPrompt() {
@@ -9,8 +10,11 @@ export function EnquiryPrompt() {
         </h2>
         <p className="mt-4 max-w-2xl text-lg text-white/90">{site.summary}</p>
         <p className="mt-4 max-w-2xl text-white/80">
-          This section is the contact point on the site. A separate contact page
-          is not published yet.
+          The contact page shows the enquiry fields. Online enquiries are not
+          available yet.
+        </p>
+        <p className="mt-6">
+          <EnquiryLink>Contact page</EnquiryLink>
         </p>
       </div>
     </section>

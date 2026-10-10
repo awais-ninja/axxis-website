@@ -58,8 +58,8 @@ export default function AboutPage() {
             How to enquire
           </h2>
           <p className="mt-4 max-w-2xl text-grey">
-            A separate contact page is not published yet. The enquiry point on
-            this site is the contact section of the homepage.
+            The contact page shows the enquiry fields. Online enquiries are not
+            available yet.
           </p>
           <p className="mt-6">
             <EnquiryLink>Contact AXXIS Works</EnquiryLink>

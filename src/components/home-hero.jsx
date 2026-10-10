@@ -52,12 +52,12 @@ export function HomeHero() {
             />
           </svg>
           <div className="mt-8 flex flex-wrap gap-3">
-            <a
-              href="#enquiry"
+            <Link
+              href="/contact"
               className={`${actionClass} bg-electric text-white`}
             >
               Contact
-            </a>
+            </Link>
             <Link
               href="/services"
               className={`${actionClass} border border-white/70 text-white`}

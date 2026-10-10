@@ -24,7 +24,7 @@ describe("services overview", () => {
     expect(screen.queryByText("An eighth service")).not.toBeInTheDocument();
     expect(screen.getByRole("link", { name: "Contact" })).toHaveAttribute(
       "href",
-      "/#enquiry",
+      "/contact",
     );
   });
 });

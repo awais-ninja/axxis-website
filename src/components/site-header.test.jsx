@@ -26,9 +26,13 @@ describe("site header", () => {
       "href",
       "/services",
     );
-    expect(
-      screen.queryByRole("link", { name: "Contact" }),
-    ).not.toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Contact" })).toHaveAttribute(
+      "href",
+      "/contact",
+    );
+    expect(screen.getByRole("link", { name: "Contact" })).toHaveClass(
+      "bg-electric",
+    );
     expect(screen.getByRole("button", { name: "Menu" })).toBeInTheDocument();
   });
 });

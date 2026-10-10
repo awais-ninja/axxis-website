@@ -16,7 +16,23 @@ Requirements for a later public site. This planning step adds no endpoint, secre
 
 ## Enquiry processing
 
-The contact form posts to a same-origin server handler (a Route Handler or a Server Action). The browser does not call an email vendor directly.
+### What Step 1.8 shipped
+
+`/contact` renders the approved fields and keeps them disabled. `src/lib/enquiry-delivery.js` sets `enabled` to `false`. There is no Route Handler, Server Action, database write, email send, or browser storage of an enquiry. The honeypot name `company_website` is recorded for a later handler and is not rendered, so the page does not imply that spam protection is active. No phone number is collected.
+
+### Activating delivery later
+
+Do this only in an approved phase, and only together:
+
+1. Confirm the recipient address and whether delivery is `mailto` or a named server-side provider (D4). Do not invent an address in the page.
+2. Confirm retention and the lawful basis (D5).
+3. Publish the privacy notice (Step 1.9) so it matches the real flow. Do not link a notice that does not exist.
+4. If the limiter needs a shared store, confirm the production host first (D8).
+5. Add one same-origin handler. Validate the checks in the table below. Reject unexpected fields. A filled honeypot and a rate-limit hit return the same generic failure. Do not log the message body.
+6. Keep provider secrets in server-only environment variables.
+7. Enable the inputs and the submit control in the same change that turns `enquiryDelivery.enabled` on. Until that change, the preview stays disabled.
+
+The contact form, once delivery is approved, posts to a same-origin server handler (a Route Handler or a Server Action). The browser does not call an email vendor directly.
 
 Validation on the server, repeated even if the browser checked the same rules:
 
@@ -24,7 +40,7 @@ Validation on the server, repeated even if the browser checked the same rules:
 | ------------ | ----------------------------------------------------------------------------- |
 | Name         | Required, trimmed, 1–100 characters                                           |
 | Email        | Required, one address, 254 characters maximum                                 |
-| Phone        | Optional, 30 characters maximum, digits and common separators only            |
+| Phone        | Out of the current form. Add it only if the owner approves the field later.   |
 | Message      | Required, 10–5000 characters                                                  |
 | Service      | Optional, must match one of the seven slugs in `docs/website-requirements.md` |
 | Honeypot     | Must be empty                                                                 |

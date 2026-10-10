@@ -73,6 +73,7 @@ export function SiteMenu({ links, pathname: pathnameProp }) {
         <ul className="flex flex-col gap-2 sm:flex-row sm:items-center">
           {links.map((link) => {
             const current = pathname === link.href;
+            const contact = link.href === "/contact";
 
             return (
               <li key={link.href}>
@@ -80,7 +81,7 @@ export function SiteMenu({ links, pathname: pathnameProp }) {
                   href={link.href}
                   aria-current={current ? "page" : undefined}
                   className={`inline-flex min-h-11 items-center rounded-full px-3 text-sm font-medium text-white ${focusRing} ${
-                    current ? "bg-electric" : ""
+                    current || contact ? "bg-electric" : ""
                   }`}
                   onClick={() => setOpen(false)}
                 >

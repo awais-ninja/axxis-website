@@ -75,8 +75,8 @@ export function ServiceDetail({ service }) {
             Enquire
           </h2>
           <p className="mt-4 text-grey">
-            The contact page is not published yet. This link goes to the enquiry
-            section on the homepage.
+            Online enquiries are not available yet. This link opens the contact
+            page.
           </p>
           <p className="mt-6">
             <EnquiryLink>Contact AXXIS Works about {service.name}</EnquiryLink>

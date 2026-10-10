@@ -9,10 +9,8 @@ describe("primary navigation", () => {
       { href: "/", label: "Home" },
       { href: "/about", label: "About" },
       { href: "/services", label: "Services" },
+      { href: "/contact", label: "Contact" },
     ]);
-    expect(primaryNavigation.map((item) => item.href)).not.toContain(
-      "/contact",
-    );
   });
 
   test("drops every candidate when no route has been built", () => {
