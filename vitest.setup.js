@@ -4,6 +4,9 @@ process.env.NEXT_PUBLIC_COPYRIGHT_YEAR ??= String(new Date().getFullYear());
 
 vi.mock("next/navigation", () => ({
   usePathname: () => "/",
+  notFound: () => {
+    throw new Error("NEXT_NOT_FOUND");
+  },
 }));
 
 class IntersectionObserverStub {

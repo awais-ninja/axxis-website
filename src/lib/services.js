@@ -83,5 +83,5 @@ export function serviceBySlug(slug) {
 }
 
 export function serviceHref(slug) {
-  return `#${slug}`;
+  return `/services/${slug}`;
 }

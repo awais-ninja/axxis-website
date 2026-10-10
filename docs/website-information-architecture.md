@@ -28,7 +28,7 @@ Service URLs are an allow-list. Implementation must not accept an arbitrary slug
 /faq                                                   Not justified yet
 ```
 
-The current app has `/` only, plus the framework not-found route.
+The current app has Home, About, the services overview, and the seven service pages, plus the framework not-found route. Contact is not built yet.
 
 Primary navigation, once those pages exist:
 

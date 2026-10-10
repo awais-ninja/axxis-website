@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ShinyText } from "@/components/shiny-text";
 import { site } from "@/lib/site";
 
@@ -57,12 +58,12 @@ export function HomeHero() {
             >
               Contact
             </a>
-            <a
-              href="#services"
+            <Link
+              href="/services"
               className={`${actionClass} border border-white/70 text-white`}
             >
               Services
-            </a>
+            </Link>
           </div>
         </div>
       </div>

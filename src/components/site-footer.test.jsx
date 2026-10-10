@@ -14,8 +14,19 @@ describe("site footer", () => {
       "href",
       "/",
     );
+    expect(screen.getByRole("link", { name: "About" })).toHaveAttribute(
+      "href",
+      "/about",
+    );
+    expect(screen.getByRole("link", { name: "Services" })).toHaveAttribute(
+      "href",
+      "/services",
+    );
     expect(
-      screen.queryByRole("link", { name: "About" }),
+      screen.getByRole("link", { name: "Website Design & Development" }),
+    ).toHaveAttribute("href", "/services/website-design-development");
+    expect(
+      screen.queryByRole("link", { name: "Contact" }),
     ).not.toBeInTheDocument();
     expect(
       screen.queryByRole("link", { name: "Privacy" }),

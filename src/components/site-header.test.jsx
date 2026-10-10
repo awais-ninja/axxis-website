@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import { SiteHeader } from "./site-header";
 
 describe("site header", () => {
-  test("shows the sized mark and only the Home route", () => {
+  test("shows the sized mark and the routes that exist", () => {
     render(<SiteHeader />);
 
     const logo = document.querySelector("header img");
@@ -18,8 +18,16 @@ describe("site header", () => {
       "aria-current",
       "page",
     );
+    expect(screen.getByRole("link", { name: "About" })).toHaveAttribute(
+      "href",
+      "/about",
+    );
+    expect(screen.getByRole("link", { name: "Services" })).toHaveAttribute(
+      "href",
+      "/services",
+    );
     expect(
-      screen.queryByRole("link", { name: "About" }),
+      screen.queryByRole("link", { name: "Contact" }),
     ).not.toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Menu" })).toBeInTheDocument();
   });

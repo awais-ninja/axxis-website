@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Link from "next/link";
 import { serviceHref, services } from "@/lib/services";
 import { ServiceMark } from "@/components/service-mark";
 
@@ -59,12 +60,12 @@ export function ServiceBento() {
             >
               <div className="flex items-start justify-between gap-4">
                 <h2 className="text-xl font-semibold text-navy">
-                  <a
+                  <Link
                     href={serviceHref(service.slug)}
                     className="inline-flex min-h-11 items-center rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-electric"
                   >
                     {service.name}
-                  </a>
+                  </Link>
                 </h2>
                 <ServiceMark slug={service.slug} />
               </div>

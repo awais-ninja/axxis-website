@@ -12,18 +12,18 @@ test("hero actions and all seven services stay on the page", async ({
     "href",
     "#enquiry",
   );
-  await expect(page.getByRole("link", { name: "Services" })).toHaveAttribute(
-    "href",
-    "#services",
-  );
+  await expect(
+    page.getByRole("main").getByRole("link", { name: "Services" }),
+  ).toHaveAttribute("href", "/services");
 
   for (const service of services) {
-    const link = page.getByRole("link", { name: service.name });
+    const link = page
+      .locator("#services")
+      .getByRole("link", { name: service.name });
     await expect(link).toBeVisible();
-    await expect(link).toHaveAttribute("href", `#${service.slug}`);
+    await expect(link).toHaveAttribute("href", `/services/${service.slug}`);
   }
 
-  await expect(page.locator('a[href^="/services/"]')).toHaveCount(0);
   await expect(page.locator('a[href="/contact"]')).toHaveCount(0);
 });
 
@@ -38,7 +38,9 @@ test("reduced motion keeps the hero and services visible", async ({ page }) => {
   await expect(page.getByText("AXXIS Works").first()).toBeVisible();
 
   for (const service of services) {
-    await expect(page.getByRole("link", { name: service.name })).toBeVisible();
+    await expect(
+      page.locator("#services").getByRole("link", { name: service.name }),
+    ).toBeVisible();
   }
 });
 
@@ -57,7 +59,9 @@ test.describe("home without JavaScript", () => {
       ),
     ).toBeVisible();
     await expect(page.getByRole("link", { name: "Contact" })).toBeVisible();
-    await expect(page.getByRole("link", { name: "Services" })).toBeVisible();
+    await expect(
+      page.getByRole("main").getByRole("link", { name: "Services" }),
+    ).toBeVisible();
 
     for (const service of services) {
       await expect(page.getByText(service.name).first()).toBeVisible();
