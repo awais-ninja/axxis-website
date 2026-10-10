@@ -17,14 +17,15 @@ describe("approved services", () => {
       "digital-marketing-advertising",
       "business-automation-integrations",
     ]);
-    expect(
-      services.every((service) => serviceHref(service.slug).startsWith("#")),
-    ).toBe(true);
-    expect(
-      services.some((service) =>
-        serviceHref(service.slug).includes("/services/"),
-      ),
-    ).toBe(false);
+    expect(services.map((service) => serviceHref(service.slug))).toEqual([
+      "/services/website-design-development",
+      "/services/custom-software-development",
+      "/services/website-maintenance-support",
+      "/services/it-support-solutions",
+      "/services/seo-search-marketing",
+      "/services/digital-marketing-advertising",
+      "/services/business-automation-integrations",
+    ]);
   });
 
   test("tells the capability story in the approved order", () => {

@@ -14,14 +14,17 @@ concurrency:
 jobs:
   quality:
     name: Lint, test, build, and audit
-    runs-on: ubuntu-latest
+    # Pin Ubuntu 24.04. ubuntu-latest moves to Ubuntu 26 on 19 October 2026.
+    # checkout and setup-node v7 run on Node 24. The app itself stays on Node 26.
+    # The full `npm audit` step still reports the dev-only braces findings and is allowed to continue.
+    runs-on: ubuntu-24.04
     timeout-minutes: 30
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7.0.1
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7.1.0
         with:
           node-version-file: .nvmrc
           cache: npm

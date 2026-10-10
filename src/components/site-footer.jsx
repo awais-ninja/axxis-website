@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { primaryNavigation } from "@/lib/navigation";
+import { serviceHref, services } from "@/lib/services";
 import { formatCopyright, resolveCopyrightYear, site } from "@/lib/site";
 
 export function SiteFooter() {
@@ -24,6 +25,18 @@ export function SiteFooter() {
                   className="inline-flex min-h-11 items-center text-navy underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-electric"
                 >
                   {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <ul aria-label="Services" className="mt-4 flex max-w-sm flex-col">
+            {services.map((service) => (
+              <li key={service.slug}>
+                <Link
+                  href={serviceHref(service.slug)}
+                  className="inline-flex min-h-11 items-center text-navy underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-electric"
+                >
+                  {service.name}
                 </Link>
               </li>
             ))}

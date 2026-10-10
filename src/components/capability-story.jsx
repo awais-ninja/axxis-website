@@ -1,5 +1,6 @@
+import Link from "next/link";
 import { Reveal } from "@/components/reveal";
-import { capabilityGroups, serviceBySlug } from "@/lib/services";
+import { capabilityGroups, serviceBySlug, serviceHref } from "@/lib/services";
 
 export function CapabilityStory() {
   return (
@@ -28,6 +29,14 @@ export function CapabilityStory() {
                         {service.name}
                       </h3>
                       <p className="mt-3 text-grey">{service.scope}</p>
+                      <p className="mt-4">
+                        <Link
+                          href={serviceHref(slug)}
+                          className="inline-flex min-h-11 items-center text-sm font-semibold text-electric underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-electric"
+                        >
+                          View {service.name}
+                        </Link>
+                      </p>
                     </article>
                   );
                 })}

@@ -30,7 +30,12 @@ test("unknown URLs return 404 inside the shell", async ({ page }) => {
     page.getByRole("main").getByRole("link", { name: "Home" }),
   ).toHaveAttribute("href", "/");
   await expect(page.getByRole("link", { name: "Contact" })).toHaveCount(0);
-  await expect(page.getByRole("link", { name: "About" })).toHaveCount(0);
+  await expect(
+    page.getByRole("banner").getByRole("link", { name: "About" }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("banner").getByRole("link", { name: "Services" }),
+  ).toBeVisible();
 });
 
 test("keyboard reaches the skip link and the mobile menu does not trap focus", async ({
@@ -110,8 +115,24 @@ test("focus on the navy header is visible and every link resolves", async ({
     .evaluateAll((anchors) =>
       anchors.map((anchor) => anchor.getAttribute("href")),
     );
-  const paths = [...new Set(hrefs.filter((href) => href.startsWith("/")))];
-  expect(paths).toEqual(["/"]);
+  const paths = [
+    ...new Set(hrefs.filter((href) => href.startsWith("/"))),
+  ].sort();
+  expect(paths).toEqual(
+    [
+      "/",
+      "/about",
+      "/services",
+      "/services/business-automation-integrations",
+      "/services/custom-software-development",
+      "/services/digital-marketing-advertising",
+      "/services/it-support-solutions",
+      "/services/seo-search-marketing",
+      "/services/website-design-development",
+      "/services/website-maintenance-support",
+    ].sort(),
+  );
+  expect(paths).not.toContain("/contact");
 
   for (const path of paths) {
     const response = await page.request.get(path);

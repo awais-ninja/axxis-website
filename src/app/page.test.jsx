@@ -18,13 +18,12 @@ describe("homepage", () => {
     );
     expect(screen.getByRole("link", { name: "Services" })).toHaveAttribute(
       "href",
-      "#services",
+      "/services",
     );
 
     for (const service of services) {
       const link = screen.getByRole("link", { name: service.name });
-      expect(link).toHaveAttribute("href", `#${service.slug}`);
-      expect(link.getAttribute("href")).not.toContain("/services/");
+      expect(link).toHaveAttribute("href", `/services/${service.slug}`);
     }
 
     expect(

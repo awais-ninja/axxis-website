@@ -9,13 +9,12 @@ const motifs = {
     "M18 24 H46 M18 40 H46 M24 18 V46 M40 18 V46",
 };
 
-export function ServiceMark({ slug }) {
+export function ServiceMark({
+  slug,
+  className = "size-14 shrink-0 text-electric",
+}) {
   return (
-    <svg
-      aria-hidden="true"
-      viewBox="0 0 64 64"
-      className="size-14 shrink-0 text-electric"
-    >
+    <svg aria-hidden="true" viewBox="0 0 64 64" className={className}>
       <circle
         cx="32"
         cy="32"
