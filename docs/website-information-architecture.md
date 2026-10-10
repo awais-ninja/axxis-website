@@ -28,7 +28,7 @@ Service URLs are an allow-list. Implementation must not accept an arbitrary slug
 /faq                                                   Not justified yet
 ```
 
-The current app has Home, About, the services overview, and the seven service pages, plus the framework not-found route. Contact is not built yet.
+The current app has Home, About, the services overview, the seven service pages, and Contact, plus the framework not-found route. Contact shows the enquiry fields and does not send them. Delivery remains an open decision.
 
 Primary navigation, once those pages exist:
 
@@ -135,13 +135,13 @@ A later project page would contain the verified summary, the work delivered, and
 
 ### Contact `/contact`
 
-|             |                                                                                      |
-| ----------- | ------------------------------------------------------------------------------------ |
-| Purpose     | Take an enquiry and show the published contact facts.                                |
-| Audience    | A person ready to write to the company.                                              |
-| Primary CTA | Submit the enquiry.                                                                  |
-| Sections    | Short intro; form; published email or phone if supplied; link to the privacy notice. |
-| SEO intent  | Navigational. The page can be indexed. Form responses are not a separate URL.        |
+|             |                                                                                                                                    |
+| ----------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| Purpose     | Show how an enquiry will be made, without collecting it yet.                                                                       |
+| Audience    | A person ready to write to the company.                                                                                            |
+| Primary CTA | None while delivery is closed. The submit control is disabled.                                                                     |
+| Sections    | Short intro; disabled field preview; note that no email, phone, or address is published. No privacy link until that notice exists. |
+| SEO intent  | Navigational. The page can be indexed. Form responses are not a separate URL.                                                      |
 
 ### Privacy `/privacy`
 

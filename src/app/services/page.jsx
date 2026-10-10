@@ -45,7 +45,8 @@ export default function ServicesPage() {
             Enquire
           </h2>
           <p className="mt-4 max-w-2xl text-grey">
-            Choose a service above, or use the contact section on the homepage.
+            Choose a service above, or open the contact page. Online enquiries
+            are not available yet.
           </p>
           <p className="mt-6">
             <EnquiryLink>Contact</EnquiryLink>

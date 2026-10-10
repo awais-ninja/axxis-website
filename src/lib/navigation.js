@@ -5,9 +5,9 @@ const navigationCandidates = [
   { href: "/contact", label: "Contact" },
 ];
 
-const implementedPaths = new Set(["/", "/about", "/services"]);
+const implementedPaths = new Set(["/", "/about", "/services", "/contact"]);
 
-export const enquiryHref = "/#enquiry";
+export const enquiryHref = "/contact";
 
 export function navigationForImplementedRoutes(
   items = navigationCandidates,

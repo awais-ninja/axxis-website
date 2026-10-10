@@ -29,7 +29,12 @@ test("unknown URLs return 404 inside the shell", async ({ page }) => {
   await expect(
     page.getByRole("main").getByRole("link", { name: "Home" }),
   ).toHaveAttribute("href", "/");
-  await expect(page.getByRole("link", { name: "Contact" })).toHaveCount(0);
+  await expect(
+    page.getByRole("banner").getByRole("link", { name: "Contact" }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("main").getByRole("link", { name: "Contact" }),
+  ).toHaveAttribute("href", "/contact");
   await expect(
     page.getByRole("banner").getByRole("link", { name: "About" }),
   ).toBeVisible();
@@ -122,6 +127,7 @@ test("focus on the navy header is visible and every link resolves", async ({
     [
       "/",
       "/about",
+      "/contact",
       "/services",
       "/services/business-automation-integrations",
       "/services/custom-software-development",
@@ -132,7 +138,7 @@ test("focus on the navy header is visible and every link resolves", async ({
       "/services/website-maintenance-support",
     ].sort(),
   );
-  expect(paths).not.toContain("/contact");
+  expect(paths).toContain("/contact");
 
   for (const path of paths) {
     const response = await page.request.get(path);

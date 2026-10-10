@@ -23,7 +23,7 @@ test("about, services, and every service page are distinct documents", async ({
     ).toBeVisible();
     await expect(
       page.getByRole("banner").getByRole("link", { name: "Contact" }),
-    ).toHaveCount(0);
+    ).toBeVisible();
   }
 
   expect(new Set(titles).size).toBe(titles.length);

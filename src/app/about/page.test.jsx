@@ -22,7 +22,7 @@ describe("about page", () => {
 
     expect(screen.getByRole("link", { name: "Contact" })).toHaveAttribute(
       "href",
-      "/#enquiry",
+      "/contact",
     );
     expect(screen.getByRole("link", { name: "Services" })).toHaveAttribute(
       "href",

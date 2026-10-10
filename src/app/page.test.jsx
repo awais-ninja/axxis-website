@@ -14,7 +14,11 @@ describe("homepage", () => {
 
     expect(screen.getByRole("link", { name: "Contact" })).toHaveAttribute(
       "href",
-      "#enquiry",
+      "/contact",
+    );
+    expect(screen.getByRole("link", { name: "Contact page" })).toHaveAttribute(
+      "href",
+      "/contact",
     );
     expect(screen.getByRole("link", { name: "Services" })).toHaveAttribute(
       "href",

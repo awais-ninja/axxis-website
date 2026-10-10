@@ -115,6 +115,8 @@ Shared header, footer, and navigation are built here, before any later page test
 | Acceptance   | Invalid input is explained. A successful submit reaches the approved transport and does not promise a reply time. Secrets stay server-side.                                                                                                                                                                                                                                |
 | STOP         | Do not point DNS at the site until 1.9 and 1.10 are done.                                                                                                                                                                                                                                                                                                                  |
 
+The contact page from this step is implemented. Enquiry delivery is not. The form is a disabled preview. D4, the recipient address, the provider, anti-spam deployment, and retention stay unresolved. Do not treat the enquiry system as operational.
+
 ## 1.9 Legal pages
 
 |              |                                                                                                                       |

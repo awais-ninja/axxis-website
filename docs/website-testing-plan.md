@@ -92,13 +92,13 @@ This step adds About and Services to the header before the end-to-end check. Con
 
 ### 1.8 Contact form
 
-| Layer         | Acceptance                                                                                                                                                                                                               |
-| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Unit          | Server validation accepts a valid payload and rejects each rule in the security document: missing fields, bad email, oversize message, unknown service, filled honeypot.                                                 |
-| Component     | Labels, error summary, `aria-invalid`, and `aria-describedby` render for an invalid submit. Values remain after a failed submit.                                                                                         |
-| End to end    | Keyboard-only submission. Success message is announced. A honeypot submission does not show a success state. The header Contact link, the hero Contact action, and each service-page enquiry link resolve to `/contact`. |
-| Security      | The handler is same-origin. The response has no stack trace and no secret. Rate limiting is covered with a unit test around the limiter function.                                                                        |
-| Accessibility | Error summary receives focus. The live region is polite.                                                                                                                                                                 |
+| Layer         | Acceptance                                                                                                                                                                                                             |
+| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Unit          | Delivery stays disabled. The page has the required labels, the seven service options, and a disabled submit control. A submit event does not call fetch or write storage. Server validation is deferred with delivery. |
+| Component     | The status text says online enquiries are not available yet. No success message is shown. The honeypot name is not in the document.                                                                                    |
+| End to end    | `/contact` returns 200. Header, hero, About, and service enquiry links resolve to `/contact`. The disabled control does not produce a POST.                                                                            |
+| Security      | There is no enquiry handler. The page does not publish an email address, phone number, or office.                                                                                                                      |
+| Accessibility | The status is a polite live region. Disabled fields are labelled. Keyboard can open Contact from the mobile menu.                                                                                                      |
 
 Email delivery tests use a fake transport. They do not call a real provider.
 

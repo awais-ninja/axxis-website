@@ -12,12 +12,18 @@ export default function NotFound() {
       <p className="mt-4 max-w-2xl text-lg text-grey">
         That address is not part of this website.
       </p>
-      <p className="mt-6">
+      <p className="mt-6 flex flex-wrap gap-3">
         <Link
           href="/"
           className="inline-flex min-h-11 items-center rounded-full bg-electric px-4 text-sm font-medium text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-electric"
         >
           Home
+        </Link>
+        <Link
+          href="/contact"
+          className="inline-flex min-h-11 items-center rounded-full border border-navy px-4 text-sm font-medium text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-electric"
+        >
+          Contact
         </Link>
       </p>
     </div>

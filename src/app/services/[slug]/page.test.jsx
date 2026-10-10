@@ -52,7 +52,7 @@ describe("service pages", () => {
       screen.getByRole("link", {
         name: "Contact AXXIS Works about Website Design & Development",
       }),
-    ).toHaveAttribute("href", "/#enquiry");
+    ).toHaveAttribute("href", "/contact");
     unmount();
 
     const marketing = await ServicePage({

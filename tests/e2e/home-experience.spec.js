@@ -8,10 +8,12 @@ test("hero actions and all seven services stay on the page", async ({
 }) => {
   await page.goto("/");
 
-  await expect(page.getByRole("link", { name: "Contact" })).toHaveAttribute(
-    "href",
-    "#enquiry",
-  );
+  await expect(
+    page.getByRole("banner").getByRole("link", { name: "Contact" }),
+  ).toHaveAttribute("href", "/contact");
+  await expect(
+    page.getByRole("main").getByRole("link", { name: "Contact", exact: true }),
+  ).toHaveAttribute("href", "/contact");
   await expect(
     page.getByRole("main").getByRole("link", { name: "Services" }),
   ).toHaveAttribute("href", "/services");
@@ -24,7 +26,7 @@ test("hero actions and all seven services stay on the page", async ({
     await expect(link).toHaveAttribute("href", `/services/${service.slug}`);
   }
 
-  await expect(page.locator('a[href="/contact"]')).toHaveCount(0);
+  await expect(page.locator('a[href="/contact"]').first()).toBeVisible();
 });
 
 test("reduced motion keeps the hero and services visible", async ({ page }) => {
@@ -58,7 +60,11 @@ test.describe("home without JavaScript", () => {
         "From professional websites and custom software to IT support, automation and comprehensive marketing, AXXIS Works delivers integrated solutions for modern businesses.",
       ),
     ).toBeVisible();
-    await expect(page.getByRole("link", { name: "Contact" })).toBeVisible();
+    await expect(
+      page
+        .getByRole("main")
+        .getByRole("link", { name: "Contact", exact: true }),
+    ).toBeVisible();
     await expect(
       page.getByRole("main").getByRole("link", { name: "Services" }),
     ).toBeVisible();

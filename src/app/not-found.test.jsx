@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import NotFound, { metadata } from "./not-found";
 
 describe("not found", () => {
-  test("explains the missing address and links only to Home", () => {
+  test("explains the missing address and links to Home and Contact", () => {
     expect(metadata.title).toBe("Page not found · AXXIS Works Ltd");
     render(<NotFound />);
 
@@ -16,8 +16,9 @@ describe("not found", () => {
       "href",
       "/",
     );
-    expect(
-      screen.queryByRole("link", { name: "Contact" }),
-    ).not.toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Contact" })).toHaveAttribute(
+      "href",
+      "/contact",
+    );
   });
 });
