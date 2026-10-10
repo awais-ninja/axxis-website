@@ -1,6 +1,9 @@
 export const site = {
   name: "AXXIS Works Ltd",
   description: "Corporate website for AXXIS Works Ltd.",
+  headline: "Technology That Powers Business Growth.",
+  supporting:
+    "From professional websites and custom software to IT support, automation and comprehensive marketing, AXXIS Works delivers integrated solutions for modern businesses.",
   summary:
     "AXXIS Works Ltd is a UK-based technology, software, IT and full-service marketing solutions company.",
   logo: {

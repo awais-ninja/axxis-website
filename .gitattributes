@@ -1,0 +1,5 @@
+# Check out and store text as LF, including on Windows with core.autocrlf.
+* text=auto eol=lf
+
+*.png binary !eol
+*.ico binary !eol

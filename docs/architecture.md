@@ -27,10 +27,10 @@ The `shadcn` package is a devDependency. The app imports `shadcn/tailwind.css` a
 - `src/app/page.jsx` renders the shell: skip link, header, main, footer.
 - `src/components/site-header.jsx` uses the 256px mark and the company name. It does not request a 4K master.
 - `src/components/ui/button.jsx` is the shadcn button primitive. It is covered by component tests and is not mounted on the homepage, because the shell has no action that needs it.
-- `src/lib/site.js` holds the name, description, and the asset paths the app is allowed to reference.
+- `src/lib/site.js` holds the name, description, approved homepage headline, supporting sentence, and the asset paths the app is allowed to reference.
 - `src/lib/security-headers.js` builds the response-header baseline. `next.config.mjs` applies it.
 
-The page copy is the company name and the sentence “Corporate website for AXXIS Works Ltd.” Service descriptions, addresses, and slogans are out of scope.
+The homepage `h1` is “Technology That Powers Business Growth.” The sentence under it is the approved supporting line. The document description remains “Corporate website for AXXIS Works Ltd.” Addresses stay unpublished.
 
 The footer year comes from `NEXT_PUBLIC_COPYRIGHT_YEAR`. `next.config.mjs` sets that value from `copyrightYearFromClock()` when the Next.js process loads its config, so a build in a new year picks up the new year without a code change. The prerendered page does not call `new Date()`, because Cache Components reject that during static generation. A long-running server keeps the year from the build that produced the page; the next build refreshes it. If the variable is missing, the footer shows the company name without inventing a year. `package.json` sets `"type": "module"` so Node loads the header helper as ESM when `next.config.mjs` imports it.
 

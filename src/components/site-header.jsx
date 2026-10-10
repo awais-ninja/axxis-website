@@ -9,7 +9,7 @@ const focusRing =
 
 export function SiteHeader() {
   return (
-    <header className="border-b-2 border-electric bg-navy text-white">
+    <header className="sticky top-0 z-40 border-b-2 border-electric bg-navy/90 text-white">
       <div className="mx-auto flex w-full max-w-5xl flex-wrap items-center justify-between gap-4 px-4 py-4">
         <Link
           href="/"

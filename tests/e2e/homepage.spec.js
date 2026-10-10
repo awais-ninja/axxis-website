@@ -24,11 +24,19 @@ test("homepage shell, brand images, and security headers", async ({ page }) => {
   expect(headers["referrer-policy"]).toBe("strict-origin-when-cross-origin");
   expect(headers["x-powered-by"]).toBeUndefined();
 
+  const title = page.getByRole("heading", { level: 1 });
+  await expect(title).toHaveText("Technology That Powers Business Growth.");
+  const titleTop = await title.evaluate(
+    (node) => node.getBoundingClientRect().top,
+  );
+  await page.waitForTimeout(400);
+  await expect
+    .poll(() => title.evaluate((node) => node.getBoundingClientRect().top))
+    .toBe(titleTop);
   await expect(
-    page.getByRole("heading", { level: 1, name: "AXXIS Works Ltd" }),
-  ).toBeVisible();
-  await expect(
-    page.getByText("Corporate website for AXXIS Works Ltd."),
+    page.getByText(
+      "From professional websites and custom software to IT support, automation and comprehensive marketing, AXXIS Works delivers integrated solutions for modern businesses.",
+    ),
   ).toBeVisible();
 
   await page.keyboard.press("Tab");
@@ -66,7 +74,10 @@ test("homepage fits a narrow viewport", async ({ page }) => {
   await page.goto("/");
 
   await expect(
-    page.getByRole("heading", { name: "AXXIS Works Ltd" }),
+    page.getByRole("heading", {
+      level: 1,
+      name: "Technology That Powers Business Growth.",
+    }),
   ).toBeVisible();
 
   const overflows = await page.evaluate(

@@ -71,9 +71,9 @@ test("the shell does not overflow and the menu follows the 640px breakpoint", as
     await page.setViewportSize({ width, height: 800 });
     await page.goto("/");
 
-    await expect(
-      page.getByRole("heading", { level: 1, name: "AXXIS Works Ltd" }),
-    ).toBeVisible();
+    await expect(page.getByRole("heading", { level: 1 })).toHaveText(
+      "Technology That Powers Business Growth.",
+    );
     expect(await overflows(page), `${width}px home`).toBe(false);
 
     const menu = page.getByRole("button", { name: "Menu" });
