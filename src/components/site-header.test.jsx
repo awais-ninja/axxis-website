@@ -33,6 +33,12 @@ describe("site header", () => {
     expect(screen.getByRole("link", { name: "Contact" })).toHaveClass(
       "bg-electric",
     );
+    expect(
+      screen.queryByRole("link", { name: "Privacy" }),
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByRole("link", { name: "Accessibility" }),
+    ).not.toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Menu" })).toBeInTheDocument();
   });
 });

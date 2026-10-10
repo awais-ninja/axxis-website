@@ -128,6 +128,8 @@ The contact page from this step is implemented. Enquiry delivery is not. The for
 | Acceptance   | The privacy notice matches the handler. It does not describe a processor that is not used.                            |
 | STOP         | Owner or their adviser reviews the notice before production traffic.                                                  |
 
+The privacy and accessibility pages from this step are implemented. The privacy page is provisional: it matches the disabled form and the reviewed application, and it does not claim to be a complete notice. `/cookies` and `/terms` were not created. Legal and compliance approval stays open. Do not start Step 1.10 in the same change.
+
 ## 1.10 Findability
 
 |              |                                                                                                                                                                        |

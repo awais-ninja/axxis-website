@@ -127,7 +127,9 @@ test("focus on the navy header is visible and every link resolves", async ({
     [
       "/",
       "/about",
+      "/accessibility",
       "/contact",
+      "/privacy",
       "/services",
       "/services/business-automation-integrations",
       "/services/custom-software-development",

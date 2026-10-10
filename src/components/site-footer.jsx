@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { primaryNavigation } from "@/lib/navigation";
+import { legalNavigation, primaryNavigation } from "@/lib/navigation";
 import { serviceHref, services } from "@/lib/services";
 import { formatCopyright, resolveCopyrightYear, site } from "@/lib/site";
 
@@ -37,6 +37,20 @@ export function SiteFooter() {
                   className="inline-flex min-h-11 items-center text-navy underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-electric"
                 >
                   {service.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+        <nav aria-label="Legal" className="min-w-0">
+          <ul className="flex flex-col">
+            {legalNavigation.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className="inline-flex min-h-11 items-center text-navy underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-electric"
+                >
+                  {link.label}
                 </Link>
               </li>
             ))}

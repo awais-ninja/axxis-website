@@ -104,11 +104,11 @@ Email delivery tests use a fake transport. They do not call a real provider.
 
 ### 1.9 Privacy, accessibility statement, and conditional legal pages
 
-| Layer      | Acceptance                                                                                                                                                 |
-| ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Component  | Privacy text includes the controller contact, purposes, recipients, and retention that D5 recorded. It does not claim a basis the owner has not confirmed. |
-| End to end | Footer links resolve. Cookie and terms routes return 404 when D6 and D9 say those pages are absent.                                                        |
-| Content    | The accessibility statement names WCAG 2.2 AA and a contact method.                                                                                        |
+| Layer      | Acceptance                                                                                                                                                                                                                                         |
+| ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Component  | The privacy page says it is provisional and not complete. It states that online enquiries are unavailable and that the form does not send, store, or email a message. It does not invent a contact, a host, a lawful basis, or a retention period. |
+| End to end | Footer Privacy and Accessibility links return 200. Header stays Home, About, Services, and Contact. `/cookies` and `/terms` return 404 while D6 and D9 leave those pages unpublished.                                                              |
+| Content    | The accessibility statement names WCAG 2.2 AA as a design target, says compliance is not claimed, and does not invent an accessibility address.                                                                                                    |
 
 ### 1.10 Sitemap, robots, and structured data
 
