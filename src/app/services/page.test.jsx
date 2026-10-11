@@ -4,7 +4,7 @@ import { services } from "@/lib/services";
 
 describe("services overview", () => {
   test("lists exactly the seven services and links each one to its page", () => {
-    expect(metadata.title).toBe("Services · AXXIS Works Ltd");
+    expect(metadata.title).toBe("Services");
     render(<ServicesPage />);
 
     expect(

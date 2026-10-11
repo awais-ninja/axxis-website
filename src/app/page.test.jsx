@@ -1,11 +1,17 @@
 import { render, screen } from "@testing-library/react";
-import HomePage from "./page";
+import HomePage, { metadata } from "./page";
 import { services } from "@/lib/services";
 import { site } from "@/lib/site";
 
 describe("homepage", () => {
   test("renders the hero, seven services, story, and in-page actions", () => {
     render(<HomePage />);
+
+    expect(metadata.title).toEqual({
+      absolute: `${site.name} · ${site.headline}`,
+    });
+    expect(metadata.description).toBe(site.supporting);
+    expect(metadata.alternates).toBeUndefined();
 
     const title = screen.getByRole("heading", { level: 1 });
     expect(title).toHaveTextContent(site.headline);

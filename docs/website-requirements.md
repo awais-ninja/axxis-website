@@ -131,9 +131,9 @@ Spam protection for launch is a honeypot field plus server-side rate limiting. A
 - One `h1` per page.
 - Title pattern proposed as `{Page} · AXXIS Works Ltd`, with Home using the company name plus a short approved descriptor once one exists.
 - Descriptions are unique and written from approved copy.
-- Canonical URLs use `NEXT_PUBLIC_SITE_URL` once that value is the production origin.
-- `robots.txt` allows public pages and points at the sitemap. It does not block the site by default.
-- Structured data is `Organization` (and `WebSite` if useful) with confirmed fields only. Review, rating, and offer markup stay out.
+- Canonical URLs are emitted only when search indexing is approved. Localhost, private hosts, IP addresses, ports, and malformed values are rejected.
+- Search indexing stays off until a validated https origin is set, `NEXT_PUBLIC_ALLOW_INDEXING` is exactly `true`, and `AXXIS_VERIFIED_PRODUCTION` is exactly `true`. `NODE_ENV=production` does not enable indexing. `robots.txt` allows fetching and does not use `Disallow` to hide a `noindex` directive.
+- Structured data is `Organization` and `WebSite` with the confirmed name, origin, and logo, and only when that same production indexing decision is on. Review, rating, address, phone, and offer markup stay out.
 
 ### Performance
 

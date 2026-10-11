@@ -1,27 +1,22 @@
+import { OrganizationJsonLd } from "@/components/organization-json-ld";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { SkipLink } from "@/components/skip-link";
-import { site } from "@/lib/site";
+import { rootMetadata } from "@/lib/seo";
 import "./globals.css";
 
-export const metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
-  ),
-  title: site.name,
-  description: site.description,
-  icons: site.icons,
-  openGraph: {
-    title: site.name,
-    description: site.description,
-    images: [site.ogImage],
-  },
+export const metadata = rootMetadata();
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
+        <OrganizationJsonLd />
         <SkipLink />
         <SiteHeader />
         <main id="main" tabIndex={-1} className="w-full flex-1 outline-none">

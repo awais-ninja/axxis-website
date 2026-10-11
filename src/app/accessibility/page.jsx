@@ -1,12 +1,14 @@
 import Link from "next/link";
 import { LegalDocument, legalLinkClass } from "@/components/legal-document";
 import { PageBand } from "@/components/page-band";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "Accessibility · AXXIS Works Ltd",
+export const metadata = pageMetadata({
+  title: "Accessibility",
   description:
     "How the AXXIS Works Ltd website approaches accessibility. This page does not claim WCAG compliance.",
-};
+  path: "/accessibility",
+});
 
 const inlineLink = `inline-flex min-h-11 items-center ${legalLinkClass}`;
 

@@ -3,7 +3,8 @@ import PrivacyPage, { metadata } from "./page";
 
 describe("privacy page", () => {
   test("states a provisional notice and the closed enquiry form", () => {
-    expect(metadata.title).toBe("Privacy · AXXIS Works Ltd");
+    expect(metadata.title).toBe("Privacy");
+    expect(metadata.robots).toEqual({ index: false, follow: false });
     expect(metadata.description).toMatch(/not a complete privacy notice/);
     expect(metadata.alternates).toBeUndefined();
 

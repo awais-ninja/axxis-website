@@ -3,13 +3,15 @@ import { EnquiryLink } from "@/components/enquiry-link";
 import { PageBand } from "@/components/page-band";
 import { ServiceMark } from "@/components/service-mark";
 import { services, serviceHref } from "@/lib/services";
+import { pageMetadata } from "@/lib/seo";
 import { site } from "@/lib/site";
 
-export const metadata = {
-  title: "Services · AXXIS Works Ltd",
+export const metadata = pageMetadata({
+  title: "Services",
   description:
     "Seven services from AXXIS Works Ltd: websites, custom software, maintenance, IT support, search, marketing, and automation.",
-};
+  path: "/services",
+});
 
 export default function ServicesPage() {
   return (

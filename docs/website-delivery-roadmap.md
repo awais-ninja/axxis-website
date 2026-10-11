@@ -141,6 +141,8 @@ The privacy and accessibility pages from this step are implemented. The privacy 
 | Acceptance   | Structured data has no unverified address, phone, profile, or rating.                                                                                                  |
 | STOP         | Search Console or any webmaster account is optional and needs approval.                                                                                                |
 
+Technical SEO from this step is complete. The website is not production-ready. Canonical URLs, sitemap entries, structured data, and indexing stay off until D8 names an https origin and both `NEXT_PUBLIC_ALLOW_INDEXING` and `AXXIS_VERIFIED_PRODUCTION` are exactly `true` on that production deployment. `NODE_ENV=production` does not enable indexing. `/privacy` stays `noindex` and out of the sitemap while legal approval is open. D2, D4, D5, and D8 stay open. No independent accessibility review or Core Web Vitals measurement is claimed here. Do not start Step 1.11 in the same change.
+
 ## 1.11 Our Work
 
 |              |                                                                                                    |

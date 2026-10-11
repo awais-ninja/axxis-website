@@ -126,6 +126,21 @@ The form must not ask for special-category data. The notice tells people not to 
 
 Server logs that contain IP addresses are personal data. Keep them for security and operations, for a short proposed window of 30 days, and keep them out of the analytics discussion. The host’s log product has to match that window or the notice must say what the host actually does (D8).
 
+## Search indexing
+
+Step 1.10 adds the technical controls and leaves indexing off.
+
+Activation, only together:
+
+1. Set `NEXT_PUBLIC_SITE_URL` to the confirmed production origin. It must be `https`, with a public hostname, and with no user, password, port, query, or path. Localhost, private names, and IP addresses are rejected.
+2. Set `NEXT_PUBLIC_ALLOW_INDEXING` to exactly `true` in the production environment. Do not set it for preview or staging.
+3. Set `AXXIS_VERIFIED_PRODUCTION` to exactly `true` on that same production deployment. No hosting-provider production signal is configured, so this flag is the production identification. `NODE_ENV=production` is not sufficient, and the request Host header is not consulted.
+4. Rebuild. Canonical URLs, the sitemap, structured data, and `index, follow` then apply to the public pages except `/privacy`.
+5. `/privacy` stays `noindex, nofollow` and out of the sitemap until the privacy notice is legally approved. That approval is separate from D8.
+6. Do not add a Search Console account unless the owner asks for one.
+
+Until all three are set, HTML pages send `noindex, nofollow` in metadata. The known document routes also send `X-Robots-Tag`. `robots.txt` allows fetching and does not list a localhost sitemap. Static files under `/_next` are not given that header, and `robots.txt` does not `Disallow` them. Open Graph images are omitted until the origin validates, so the build does not publish a localhost image URL.
+
 ## Cookies and consent
 
 A launch without analytics, advertising, or embedded third-party media can ship with no cookie banner and no `/cookies` page. Step 1.9 confirmed that this application is in that state and did not add either control. Document strictly necessary technical storage in the privacy notice if any is introduced later. Do not treat this as proof that an unchosen host will never set a cookie.
