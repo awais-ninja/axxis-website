@@ -15,6 +15,7 @@
   --color-navy: var(--brand-navy);
   --color-navy-surface: var(--brand-navy-surface);
   --color-electric: var(--brand-electric);
+  --color-link: var(--brand-link);
   --color-grey: var(--brand-grey);
   --color-surface: var(--brand-surface);
   --color-sidebar-ring: var(--sidebar-ring);
@@ -61,6 +62,7 @@
   --brand-navy: #041024;
   --brand-navy-surface: #0a2545;
   --brand-electric: #2467fe;
+  --brand-link: #2261ef;
   --brand-grey: #5c6770;
   --brand-white: #ffffff;
   --brand-surface: #f4f7fb;

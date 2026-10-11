@@ -1,5 +1,5 @@
 export const legalLinkClass =
-  "text-electric underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-electric";
+  "text-link underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-electric";
 
 export function LegalDocument({ notice, sections }) {
   return (

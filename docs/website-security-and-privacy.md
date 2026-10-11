@@ -141,6 +141,8 @@ Activation, only together:
 
 Until all three are set, HTML pages send `noindex, nofollow` in metadata. The known document routes also send `X-Robots-Tag`. `robots.txt` allows fetching and does not list a localhost sitemap. Static files under `/_next` are not given that header, and `robots.txt` does not `Disallow` them. Open Graph images are omitted until the origin validates, so the build does not publish a localhost image URL.
 
+Step 1.13 rechecked a production build with indexing left off. The production Content Security Policy has no `unsafe-eval`. `Strict-Transport-Security` is `max-age=15552000` without `includeSubDomains` or `preload`; browsers ignore it on HTTP, so it takes effect only after HTTPS. The enquiry preview does not POST, the disabled fieldset is not stored, and the response sets no application cookie. No analytics script is present. Production browser source maps are not emitted. The nine high `braces` advisories remain dev-only and were not force-fixed.
+
 ## Cookies and consent
 
 A launch without analytics, advertising, or embedded third-party media can ship with no cookie banner and no `/cookies` page. Step 1.9 confirmed that this application is in that state and did not add either control. Document strictly necessary technical storage in the privacy notice if any is introduced later. Do not treat this as proof that an unchosen host will never set a cookie.

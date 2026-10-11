@@ -39,6 +39,9 @@ describe("homepage", () => {
     expect(
       screen.getByRole("heading", { name: "Care and IT" }),
     ).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: "View Website Design & Development" }),
+    ).toHaveClass("text-link");
     expect(document.getElementById("enquiry")).toBeInTheDocument();
   });
 });

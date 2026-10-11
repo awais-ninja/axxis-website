@@ -1,6 +1,6 @@
 # Website open decisions
 
-Decisions still open before the matching build step. D1, D13, and D14 are resolved and recorded below. “Proposed default” is a recommendation, not a decision, except where a row is marked resolved.
+Decisions still open before the matching build step. D1, D13, and D14 are resolved and recorded below. “Proposed default” is a recommendation, not a decision, except where a row is marked resolved. Step 1.13 did not close D2, D4, D5, or D8, and it did not turn on enquiry delivery or search indexing.
 
 | ID  | Decision                                                                                                         | Proposed default if the owner wants one                                                                                                                                                                                                                                        | Blocks                                                                                                             |
 | --- | ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |

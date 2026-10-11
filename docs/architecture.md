@@ -36,9 +36,9 @@ The footer year comes from `NEXT_PUBLIC_COPYRIGHT_YEAR`. `next.config.mjs` sets 
 
 ## Colour tokens
 
-Tokens live in `src/app/globals.css` as `--brand-navy`, `--brand-navy-surface`, `--brand-electric`, `--brand-grey`, `--brand-white`, and `--brand-surface`. shadcn semantic colours (`--primary`, `--background`, and the rest) point at those tokens.
+Tokens live in `src/app/globals.css` as `--brand-navy`, `--brand-navy-surface`, `--brand-electric`, `--brand-link`, `--brand-grey`, `--brand-white`, and `--brand-surface`. shadcn semantic colours (`--primary`, `--background`, and the rest) point at those tokens.
 
-The values were sampled from the approved artwork on 9 October 2026. They are provisional until a palette is approved. Neutral grey is `#5c6770`, darker than the sampled wordmark grey `#8d8d8e`, so body text clears WCAG AA on white (about 5.8:1). Electric blue `#2467fe` on white is about 4.7:1. White on deep navy `#041024` is about 19:1. Electric blue on navy is about 4.0:1, so it is not used for small text on the navy header.
+The values were sampled from the approved artwork on 9 October 2026. They are provisional until a palette is approved. Neutral grey is `#5c6770`, darker than the sampled wordmark grey `#8d8d8e`, so body text clears WCAG AA on white (about 5.8:1). Electric blue `#2467fe` stays the mark and button colour. Text links use `#2261ef` because `#2467fe` on the surface tint `#f4f7fb` is about 4.4:1, under the 4.5:1 AA target for 14px text. White on deep navy `#041024` is about 19:1. Electric blue on navy is about 4.0:1, so it is not used for small text on the navy header.
 
 A `.dark` token set exists for a future theme. The shell does not toggle it.
 

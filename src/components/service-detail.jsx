@@ -56,7 +56,7 @@ export function ServiceDetail({ service }) {
               <li key={item.slug}>
                 <Link
                   href={serviceHref(item.slug)}
-                  className="inline-flex min-h-11 items-center text-electric underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-electric"
+                  className="inline-flex min-h-11 items-center text-link underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-electric"
                 >
                   {item.name}
                 </Link>
