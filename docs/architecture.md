@@ -44,7 +44,7 @@ A `.dark` token set exists for a future theme. The shell does not toggle it.
 
 ## Future staging and production
 
-- Set `NEXT_PUBLIC_SITE_URL` to the real origin before metadata is shared.
+- Set `NEXT_PUBLIC_SITE_URL` to the confirmed https origin before canonical URLs or indexing are enabled. Localhost is ignored. Indexing also requires `NEXT_PUBLIC_ALLOW_INDEXING=true` and `AXXIS_VERIFIED_PRODUCTION=true`. `NODE_ENV=production` is not that signal. No hosting-provider production flag is configured.
 - Terminate TLS in front of the app and only then enable `upgrade-insecure-requests` and review HSTS. See the security baseline.
 - Do not deploy this foundation as the public site. There is no deployment workflow.
 - Replace the JPEG-derived logo with vector artwork before treating the 4K files as production masters.

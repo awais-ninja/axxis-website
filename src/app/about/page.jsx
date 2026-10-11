@@ -2,12 +2,14 @@ import Link from "next/link";
 import { EnquiryLink } from "@/components/enquiry-link";
 import { PageBand } from "@/components/page-band";
 import { services, serviceHref } from "@/lib/services";
+import { pageMetadata } from "@/lib/seo";
 import { site } from "@/lib/site";
 
-export const metadata = {
-  title: "About · AXXIS Works Ltd",
+export const metadata = pageMetadata({
+  title: "About",
   description: site.summary,
-};
+  path: "/about",
+});
 
 export default function AboutPage() {
   return (

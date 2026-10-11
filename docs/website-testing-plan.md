@@ -112,11 +112,11 @@ Email delivery tests use a fake transport. They do not call a real provider.
 
 ### 1.10 Sitemap, robots, and structured data
 
-| Layer      | Acceptance                                                                                                                                                |
-| ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Unit       | Sitemap paths equal the built public routes. `robots.txt` references the sitemap on `NEXT_PUBLIC_SITE_URL`.                                               |
-| Unit       | JSON-LD contains the company name, canonical URL, and logo. It has no address, phone, `sameAs`, or rating unless that field is in the approved fact file. |
-| End to end | `/sitemap.xml` and `/robots.txt` return 200 on the production server.                                                                                     |
+| Layer      | Acceptance                                                                                                                                                                                                                                                                                                                                                                        |
+| ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Unit       | A validated https origin is required. Localhost, private hosts, IP addresses, and malformed values produce no canonical URL. Sitemap entries exist only when indexing is approved, and they omit `/privacy`, `lastmod`, `changefreq`, and `priority`.                                                                                                                             |
+| Unit       | Indexing stays off unless the origin is valid, `NEXT_PUBLIC_ALLOW_INDEXING` is exactly `true`, and `AXXIS_VERIFIED_PRODUCTION` is exactly `true`. `NODE_ENV=production` does not enable it. JSON-LD is omitted until that decision is on. With it on, one Organization and WebSite graph contains the company name, origin, and logo, and no address, phone, `sameAs`, or rating. |
+| End to end | With indexing closed, pages send `noindex`, `/sitemap.xml` and `/robots.txt` return 200, and neither file contains localhost. `/privacy` is not in the sitemap.                                                                                                                                                                                                                   |
 
 ### 1.11 Our Work, only after D3
 

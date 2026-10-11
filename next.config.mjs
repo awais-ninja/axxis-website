@@ -1,3 +1,4 @@
+import { documentRobotsHeaderRules } from "./src/lib/seo.js";
 import { buildSecurityHeaders } from "./src/lib/security-headers.js";
 import { copyrightYearFromClock } from "./src/lib/site.js";
 
@@ -27,6 +28,7 @@ const nextConfig = {
         source: "/(.*)",
         headers: buildSecurityHeaders({ isDevelopment }),
       },
+      ...documentRobotsHeaderRules(),
     ];
   },
 };

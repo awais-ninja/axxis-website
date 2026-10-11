@@ -1,11 +1,19 @@
 import { render, screen } from "@testing-library/react";
-import RootLayout, { metadata } from "./layout";
+import RootLayout, { metadata, viewport } from "./layout";
+import { site } from "@/lib/site";
 
 describe("root layout", () => {
   test("publishes the company title and sized social image", () => {
-    expect(metadata.title).toBe("AXXIS Works Ltd");
-    expect(metadata.description).toBe("Corporate website for AXXIS Works Ltd.");
-    expect(metadata.openGraph.images[0].url).toBe("/axxis-og-1200x630.png");
+    expect(metadata.title).toEqual({
+      default: "AXXIS Works Ltd",
+      template: "%s · AXXIS Works Ltd",
+    });
+    expect(metadata.description).toBe(site.supporting);
+    expect(metadata.robots).toEqual({ index: false, follow: false });
+    expect(metadata.metadataBase).toBeUndefined();
+    expect(metadata.alternates).toBeUndefined();
+    expect(viewport).toEqual({ width: "device-width", initialScale: 1 });
+    expect(metadata.openGraph.images).toBeUndefined();
     expect(metadata.icons.icon.map((icon) => icon.url)).toEqual([
       "/favicon.ico",
       "/axxis-icon-32.png",
@@ -29,5 +37,8 @@ describe("root layout", () => {
     ).toHaveAttribute("href", "#main");
     expect(screen.getByRole("banner")).toBeInTheDocument();
     expect(screen.getByRole("contentinfo")).toBeInTheDocument();
+    expect(
+      document.querySelector('script[type="application/ld+json"]'),
+    ).toBeNull();
   });
 });

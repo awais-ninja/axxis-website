@@ -1,13 +1,15 @@
 import Link from "next/link";
 import { EnquiryPreview } from "@/components/enquiry-preview";
 import { PageBand } from "@/components/page-band";
+import { pageMetadata } from "@/lib/seo";
 import { site } from "@/lib/site";
 
-export const metadata = {
-  title: "Contact · AXXIS Works Ltd",
+export const metadata = pageMetadata({
+  title: "Contact",
   description:
     "Contact AXXIS Works Ltd. Online enquiries are not available yet.",
-};
+  path: "/contact",
+});
 
 function ContactMark() {
   return (

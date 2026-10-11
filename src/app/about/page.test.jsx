@@ -4,7 +4,8 @@ import { services } from "@/lib/services";
 
 describe("about page", () => {
   test("states the confirmed positioning and links to services and the enquiry section", () => {
-    expect(metadata.title).toBe("About · AXXIS Works Ltd");
+    expect(metadata.title).toBe("About");
+    expect(metadata.robots).toEqual({ index: false, follow: false });
     render(<AboutPage />);
 
     expect(

@@ -1,12 +1,14 @@
 import Link from "next/link";
 import { LegalDocument, legalLinkClass } from "@/components/legal-document";
 import { PageBand } from "@/components/page-band";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "Privacy · AXXIS Works Ltd",
+export const metadata = pageMetadata({
+  title: "Privacy",
   description:
     "Provisional notice of how the AXXIS Works Ltd website behaves today. It is not a complete privacy notice.",
-};
+  path: "/privacy",
+});
 
 const inlineLink = `inline-flex min-h-11 items-center ${legalLinkClass}`;
 

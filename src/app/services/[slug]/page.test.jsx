@@ -15,14 +15,15 @@ describe("service pages", () => {
       params: Promise.resolve({ slug: "seo-search-marketing" }),
     });
 
-    expect(metadata.title).toBe("SEO & Search Marketing · AXXIS Works Ltd");
+    expect(metadata.title).toBe("SEO & Search Marketing");
     expect(metadata.description).toMatch(/Technical SEO/);
     expect(metadata.alternates).toBeUndefined();
 
     const missing = await generateMetadata({
       params: Promise.resolve({ slug: "websites" }),
     });
-    expect(missing.title).toBe("Page not found · AXXIS Works Ltd");
+    expect(missing.title).toBe("Page not found");
+    expect(missing.robots).toEqual({ index: false, follow: false });
   });
 
   test("returns not found for an unknown slug", async () => {

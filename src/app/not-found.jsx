@@ -1,9 +1,12 @@
 import Link from "next/link";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "Page not found · AXXIS Works Ltd",
+export const metadata = pageMetadata({
+  title: "Page not found",
   description: "That address is not part of the AXXIS Works Ltd website.",
-};
+  path: "/404",
+  indexable: false,
+});
 
 export default function NotFound() {
   return (

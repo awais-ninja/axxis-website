@@ -3,7 +3,7 @@ import AccessibilityPage, { metadata } from "./page";
 
 describe("accessibility page", () => {
   test("names the design target without claiming an audit", () => {
-    expect(metadata.title).toBe("Accessibility · AXXIS Works Ltd");
+    expect(metadata.title).toBe("Accessibility");
     expect(metadata.description).toMatch(/does not claim WCAG compliance/);
     expect(metadata.alternates).toBeUndefined();
 

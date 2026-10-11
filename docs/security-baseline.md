@@ -89,4 +89,4 @@ npm 12 blocks dependency install scripts unless they are approved. `unrs-resolve
 
 ## Secrets
 
-`.gitignore` ignores `.env*` except `.env.example`. `.env.example` contains only `NEXT_PUBLIC_SITE_URL=http://localhost:3000`.
+`.gitignore` ignores `.env*` except `.env.example`. `.env.example` sets `NEXT_PUBLIC_SITE_URL=http://localhost:3000` and leaves the indexing flags commented out.

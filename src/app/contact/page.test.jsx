@@ -5,7 +5,7 @@ import { services } from "@/lib/services";
 
 describe("contact page", () => {
   test("describes a closed enquiry preview and lists the seven services", () => {
-    expect(metadata.title).toBe("Contact · AXXIS Works Ltd");
+    expect(metadata.title).toBe("Contact");
     expect(metadata.description).toMatch(/not available yet/);
     expect(metadata.alternates).toBeUndefined();
     expect(enquiryDelivery.enabled).toBe(false);
