@@ -176,6 +176,8 @@ Technical SEO from this step is complete. The website is not production-ready. C
 | Acceptance   | WCAG 2.2 AA issues found at serious or critical are fixed or accepted in writing. Vital targets are met or accepted in writing. Production audit gate is green. |
 | STOP         | Public DNS and hosting stay with the owner. This roadmap does not deploy.                                                                                       |
 
+The Step 1.13 review is recorded in `docs/launch-readiness.md`. Technical QA is complete. The site is not production-ready. D2, D4, D5, D8, legal approval of the privacy notice, an independent accessibility review, and field Core Web Vitals stay open. Search indexing and enquiry delivery stay off. Do not deploy from this step.
+
 ## Suggested order
 
 1.4, then 1.5, 1.5A, 1.5B, 1.5C, 1.6, 1.7, 1.8, 1.9, 1.10, then 1.13. Insert 1.11 and 1.12 only after their decisions. A `mailto` contact in 1.8 can ship before a paid email provider exists. D14 is resolved, so 1.5A is no longer waiting on a library decision. It still waits until this planning revision is approved.

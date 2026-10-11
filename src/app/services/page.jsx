@@ -32,7 +32,7 @@ export default function ServicesPage() {
               <p className="mt-5">
                 <Link
                   href={serviceHref(service.slug)}
-                  className="inline-flex min-h-11 items-center text-sm font-semibold text-electric underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-electric"
+                  className="inline-flex min-h-11 items-center text-sm font-semibold text-link underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-electric"
                 >
                   View {service.name}
                 </Link>

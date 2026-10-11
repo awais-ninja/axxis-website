@@ -149,6 +149,8 @@ These sit on top of the per-step tests. They can be manual where automation is t
 - Disabling JavaScript still shows the hero text, the service links, and the contact path.
 - The trace used for LCP, INP, and CLS is recorded with motion allowed and again with reduced motion. Both must meet the requirements targets, or the owner accepts a written exception.
 
+Step 1.13 ran these checks against a local production build and recorded the result in `docs/launch-readiness.md`. No axe package was added. Lighthouse supplied the automated accessibility and lab performance pass. INP was not claimed from lab Total Blocking Time. A second reduced-motion Lighthouse trace was not collected; reduced-motion behaviour is covered by the existing Playwright tests.
+
 ## Security checks before a public launch
 
 - Re-run the header assertions on `/` and on `/contact`.

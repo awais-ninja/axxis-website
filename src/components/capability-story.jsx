@@ -32,7 +32,7 @@ export function CapabilityStory() {
                       <p className="mt-4">
                         <Link
                           href={serviceHref(slug)}
-                          className="inline-flex min-h-11 items-center text-sm font-semibold text-electric underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-electric"
+                          className="inline-flex min-h-11 items-center text-sm font-semibold text-link underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-electric"
                         >
                           View {service.name}
                         </Link>
